@@ -1,4 +1,4 @@
-# Criador de Mensagens Profissionais
+# Gerador de Mensagens Profissionais
 
 Pequena web app (Flask) que gera mensagens profissionais curtas a partir de um contexto. Suporta chamadas para OpenAI **(gpt-3.5 / gpt-5)** ou para **Gemini** (Google) e contém um fallback local caso a API esteja sem cota.
 
