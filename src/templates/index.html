@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Criador de Mensagens Profissionais
+
+    </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 720px;
+            margin: 30px auto;
+            padding: 0 10px
+        }
+
+        textarea {
+            width: 100%;
+            height: 120px
+        }
+
+        .result {
+            white-space: pre-wrap;
+            background: #f7f7f7;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 12px
+        }
+
+        .error {
+            color: #b00020
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Criador de Mensagens Profissionais</h1>
+
+    <form action="/generate" method="post">
+        <label for="prompt">Descreva o contexto (ex.: "Pedir feedback de entrevista"):
+
+        </label><br />
+        <textarea id="prompt" name="prompt" placeholder="Explique o que você precisa...">{{ prompt or "" }}
+
+    </textarea><br />
+        <button type="submit">Gerar mensagem
+
+        </button>
+    </form>
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+    <h2>Mensagem gerada</h2>
+    <div class="result">{{ result }}</div>
+    {% endif %}
+</body>
+
+</html>
